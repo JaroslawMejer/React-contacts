@@ -1,3 +1,76 @@
+/* GRID */
+* {
+  box-sizing: border-box;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+/* END OF GRID */
+/* CLEARFIX HAX */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* CLEARFIX HAX ENDS */
 body {
   padding: 0;
   margin: 0;
@@ -19,6 +92,7 @@ body .app .header {
   text-align: center;
   text-transform: uppercase;
   color: #666666;
+  margin-bottom: 0;
 }
 
 body .app .contactForm {
@@ -40,6 +114,7 @@ body .app .contactForm input {
   padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+  outline: none;
 }
 
 body .app .contactForm input::-webkit-input-placeholder {
@@ -64,9 +139,70 @@ body .app .contactForm button {
   font-weight: bold;
   color: #666666;
   font-family: 'Titillium Web', sans-serif;
+  background-color: transparent;
+  transition: 0.5s;
 }
 
 body .app .contactForm button:hover {
   cursor: pointer;
+  background-color: white;
+}
+
+body .app .contactsList {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  position: relative;
+}
+
+body .app .contactsList .contactItem {
+  margin: 5px 0;
+  width: 80%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.75);
+  position: relative;
+  left: 0;
+  transition: 0.5s;
+}
+
+body .app .contactsList .contactItem:hover {
+  left: 5px;
+}
+
+body .app .contactsList .contactItem:hover .sidebar {
+  bottom: 0;
+}
+
+body .app .contactsList .contactItem .image {
+  height: inherit;
+  text-align: right;
+  color: #666666;
+}
+
+body .app .contactsList .contactItem .sidebar {
+  position: absolute;
+  width: 10px;
+  top: 0;
+  bottom: 100%;
+  background-color: #666666;
+  transition: 0.5s linear;
+}
+
+body .app .contactsList .contactData .contactLabel {
+  margin: 5px 0;
 }
 /*# sourceMappingURL=style.css.map */
